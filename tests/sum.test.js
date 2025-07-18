@@ -1,5 +1,11 @@
-const sum=require('../functions/sum.js')
+// test('Object testing',()=>{
+//     const data={one:1};
+//     data['two']=2;
+//     expect(data).toBeTruthy()
+// })
 
-test('testing sum function', ()=>{
-    expect(sum(1,2)).toBe(3);
+
+test('Falsy checking',()=>{
+    const n=undefined;
+    expect(n).toBeFalsy()
 })

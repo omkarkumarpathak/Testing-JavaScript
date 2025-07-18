@@ -52,11 +52,19 @@ const {sum, fetchData, PromiseFunction}=require('../functions/sum.js')
 
 //:: Testing Promise returning function
 
-test('testing-promise function',()=>{
-    return expect(PromiseFunction()).resolves.toBe('peanut-butter');
+// test('testing-promise function',()=>{
+//     return expect(PromiseFunction()).resolves.toBe('peanut-butter');
+// })
+
+// test('testing-promise function',()=>{
+//     return expect(PromiseFunction()).rejects.toThrow('Error');
+// })
+
+
+test('testing async function',async()=>{
+    const data=await PromiseFunction();
+    expect(data).toBe('peanut-butter');
 })
 
-test('testing-promise function',()=>{
-    return expect(PromiseFunction()).rejects.toThrow('Error');
-})
+
 

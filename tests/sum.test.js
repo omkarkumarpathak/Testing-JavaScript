@@ -53,6 +53,10 @@ const {sum, fetchData, PromiseFunction}=require('../functions/sum.js')
 //:: Testing Promise returning function
 
 test('testing-promise function',()=>{
-    expect(PromiseFunction()).resolves.toBe('peanut-butter');
+    return expect(PromiseFunction()).resolves.toBe('peanut-butter');
+})
+
+test('testing-promise function',()=>{
+    return expect(PromiseFunction()).rejects.toThrow('Error');
 })
 

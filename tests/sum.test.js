@@ -1,4 +1,4 @@
-const {sum, fetchData}=require('../functions/sum.js')
+const {sum, fetchData, PromiseFunction}=require('../functions/sum.js')
 
 // test('testing sum function', ()=>{
 //     expect(sum(1,2)).toBe(3);
@@ -33,20 +33,26 @@ const {sum, fetchData}=require('../functions/sum.js')
 // });
 
 
-//fetchData function Checking
+//Testing fetchData function Checking
 
-test('async fetchData testing', (done)=>{
+// test('async fetchData testing', (done)=>{
     
-    function callback(data){
-        try {
-            expect(data).toBe('peanut-butter');
-            done();
-        } catch (error) {
-            done(error);
-        }
-    }
-    fetchData(callback);
-    
+//     function callback(data){
+//         try {
+//             expect(data).toBe('peanut-butter');
+//             done();
+//         } catch (error) {
+//             done(error);
+//         }
+//     }
+//     fetchData(callback);
+
+// })
+
+
+//:: Testing Promise returning function
+
+test('testing-promise function',()=>{
+    expect(PromiseFunction()).resolves.toBe('peanut-butter');
 })
-
 

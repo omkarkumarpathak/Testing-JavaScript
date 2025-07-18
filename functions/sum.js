@@ -8,4 +8,10 @@ function fetchData(callback) {
   }, 2000);
 }
 
-module.exports = { sum, fetchData };
+function PromiseFunction(){
+    return new Promise((resolve, reject)=>{
+        setTimeout(resolve('peanut-butter'),1000);
+    })
+}
+
+module.exports = { sum, fetchData, PromiseFunction };

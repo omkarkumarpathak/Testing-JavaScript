@@ -1,4 +1,4 @@
-// const sum=require('../functions/sum.js')
+const {sum, fetchData}=require('../functions/sum.js')
 
 // test('testing sum function', ()=>{
 //     expect(sum(1,2)).toBe(3);
@@ -19,12 +19,34 @@
 //     expect(n).toBeFalsy()
 // })
 
-function throwError() {
-  throw new Error('Something went wrong');
-}
 
-test('throws an error', () => {
-  expect(throwError).toThrow();                    // ✅ any error
-  expect(throwError).toThrow('Something went wrong'); // ✅ specific message
-  expect(throwError).toThrow(Error);               // ✅ error type
-});
+//throw error
+
+// function throwError() {
+//   throw new Error('Something went wrong');
+// }
+
+// test('throws an error', () => {
+//   expect(throwError).toThrow();                    // ✅ any error
+//   expect(throwError).toThrow('Something went wrong'); // ✅ specific message
+//   expect(throwError).toThrow(Error);               // ✅ error type
+// });
+
+
+//fetchData function Checking
+
+test('async fetchData testing', (done)=>{
+    
+    function callback(data){
+        try {
+            expect(data).toBe('peanut-butter');
+            done();
+        } catch (error) {
+            done(error);
+        }
+    }
+    fetchData(callback);
+    
+})
+
+
